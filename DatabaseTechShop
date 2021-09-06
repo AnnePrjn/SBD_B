@@ -1,0 +1,83 @@
+group: TechShop
+Branch = {
+BranchNo, Street, City, Postcode
+'B01', 'Jln. Kebonkacang', 'Jakarta', 10240
+'B02', 'Jln. Wijaya Kusuma', 'Surabaya', 60272
+'B03', 'Jln. Karanganyar', 'Semarang', 50152
+'B04', 'Jln. Yos Sudarso', 'Depok', 16434
+'B05', 'Jln. Tlogomas', 'Malang', 65144
+}
+Staff = {
+staffNo, fName, lName, position, gender, salary, branchNo
+'SA25', 'unggul', 'pratama', 'marketing', 'M', 4200000, 'B04'
+'SL17', 'sinta ', 'aryani', 'sales', 'F', 2700000, 'B02'
+'SG09', 'agung', 'suryadi', 'admin', 'M', 4400000, 'B03'
+'SL11', 'sarah', 'wijayanti', 'accounting', 'F', 4200000, 'B05'
+'SA02', 'andi', 'prasetyo', 'sales', 'M', 2700000, 'B01'
+'SB23', 'udin', 'santoso', 'marketing', 'M', 4200000, 'B01'
+'SC33', 'anto', 'wahyu', 'sales', 'M', 4200000, 'B04'
+'ST56', 'zahra', 'vania', 'accounting', 'F', 4200000, 'B03'
+'SU72', 'dini', 'fahriza', 'admin', 'F', 4200000, 'B01'
+'SR43', 'caca', 'marisa', 'marketing', 'F', 4200000, 'B02'
+}
+Customer = {
+custNo, fName, lName, telNo
+'CR20', 'irwan', 'adam', 08572234054
+'CR17', 'fathia', 'annisa', 08174359879
+'CR54', 'shalika', 'zalfa', 08127782463
+'CR38', 'farhan', 'setiawan', 08159318645
+'CR65', 'zaki', 'akbar', 08560231347
+'CR07', 'nur', 'ciquita', 08578892431
+'CR59', 'farisa', 'tania', 08395677890
+'CR27', 'ahmadi', 'septian', 08382546687
+'CR12', 'joko', 'anwar', 08156432213
+'CR34', 'tono', 'stark', 08568765561
+}
+PC = {
+brand, modelNo, ram, hd, price
+'Asus', '1A001', 4, 1000, 5350000
+'Asus', '1A004', 4, 500, 7199000
+'Lenovo', '2A009', 4, 500, 5200000
+'Lenovo', '2A010', 4, 1000, 7299000
+'Lenovo', '2A012', 8, 1000, 10000000
+'Lenovo', '2A021', 8, 1000, 14299000
+'Acer', '3A006', 4, 1000, 7399000
+'Acer', '3A09', 4, 1000, 13100000
+'HP', '4A002', 4, 1000, 5500000
+'HP', '4A005', 4, 1000, 8099000
+'HP', '4A013', 8, 1000, 10399000
+'Apple', '5A027', 8, 1000, 19499000
+}
+Laptop = {
+brand, modelNo, ram, hd, price
+'Asus', '1B001', 4, 1000, 3800000
+'Asus', '1B002', 4, 256, 6499000
+'Asus', '1B003', 8, 512, 13490000
+'Lenovo', '2B001', 4, 250, 2400000
+'Lenovo', '2B002', 4, 1000, 5699000
+'Acer', '3B001', 4, 128, 5000000
+'HP', '4B001', 4, 512, 7344000
+'HP', '4B004', 4, 128, 3799000
+'HP', '4B011', 8, 512, 15499000
+'Apple', '5B009', 8, 121, 12500000
+'ROG', '6B005', 16, 512, 15599000
+'Legion', '7B012', 16, 512, 16599000
+}
+Selling = {
+brand,  modelNo,  type,  quantity,  totalPrice,  dateSell,  custNo,  branchNo
+'Asus', '1B001', 'Laptop', 8, 30400000, '12-Sep-20', 'CR17', 'B04'
+'HP', '4B011', 'Laptop', 4, 61996000, '08-Jun-20', 'CR54', 'B03'
+'HP', '4A002', 'pc', 9, 49500000, '25-Agu-20', 'CR38', 'B05'
+'Apple', '5B009', 'Laptop', 7, 87500000, '02-Okt-20', 'CR65', 'B01'
+'Lenovo', '2A021', 'pc', 5, 28495000, '16-Feb-20', 'CR20', 'B02'
+'HP', '4A013', 'pc', 4, 41356000, '27-Okt-20', 'CR07', 'B03'
+'Lenovo', '2B001', 'Laptop', 3, 7200000, '25-Jan-20', 'CR59', 'B03'
+'Acer', '3B001', 'Laptop', 5, 25000000, '11-Jan-20', 'CR27', 'B02'
+'Apple', '5A027', 'pc', 2, 38998000, '18-Sep-20', 'CR12', 'B04'
+'Asus', '1A001', 'pc', 4, 21400000, '5-Agu-20', 'CR34', 'B05'
+'Legion', '7B012', 'Laptop', 1, 16599000, '7-Nov-20', 'CR54', 'B02'
+'Asus', '1B003', 'Laptop', 3, 40470000, '19-Jul-20', 'CR07', 'B01'
+'Lenovo', '2A009', 'pc', 6, 31200000, '21-Feb-20', 'CR65', 'B01'
+'Asus', '1A004', 'pc', 5, 35995000, '26-Agu-20', 'CR59', 'B02'
+'Apple', '5A027', 'pc', 1, 19499000, '29-Okt-20', 'CR27', 'B04'
+}
