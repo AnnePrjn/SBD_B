@@ -64,7 +64,7 @@ brand, modelNo, ram, hd, price
 'Legion', '7B012', 16, 512, 16599000
 }
 Selling = {
-brand,  modelNo,  type,  quantity,  totalPrice,  dateSell,  custNo
+brand,  modelNo,  type,  quantity,  totalPrice,  dateSell,  custNo,  branchNo
 'Asus', '1B001', 'Laptop', 8, 30400000, '12-Sep-20', 'CR17', 'B04'
 'HP', '4B011', 'Laptop', 4, 61996000, '08-Jun-20', 'CR54', 'B03'
 'HP', '4A002', 'pc', 9, 49500000, '25-Agu-20', 'CR38', 'B05'
