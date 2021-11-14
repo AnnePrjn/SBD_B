@@ -1,0 +1,56 @@
+CREATE (pc:Category {title: 'PC'}), 
+(laptop:Category {title: 'Laptop'}),
+
+//PC
+CREATE (asus_1A001:Product {title: 'Asus 1A001', price: 535.00, shippability: true, availability: true})
+CREATE (hp_4A002:Product {title: 'HP 4A002', price: 550.00, shippability: true, availability: true})
+CREATE (asus_1A004:Product {title: 'Asus 1A004', price: 719.90, shippability: true, availability: false})
+CREATE (apple_5A027:Product {title: 'Apple 5A027', price: 1949.99, shippability: true, availability: false})
+CREATE (lenovo_2A009:Product {title: 'Lenovo 2A009', price: 520.00, shippability: true, availability: true})
+CREATE (acer_3A006:Product {title: 'Acer 3A006', price: 739.90, shippability: true, availability: true})
+
+MERGE (asus_1A001)-[:IS_IN]->(pc)
+MERGE (hp_4A002)-[:IS_IN]->(pc)
+MERGE (asus_1A004)-[:IS_IN]->(pc)
+MERGE (apple_5A027)-[:IS_IN]->(pc)
+MERGE (lenovo_2A009)-[:IS_IN]->(pc)
+MERGE (acer_3A006)-[:IS_IN]->(pc)
+
+//Laptop
+CREATE (acer_3B001:Product {title: 'Acer 3B001', price: 500.00, shippability: true, availability: false})
+CREATE (hp_4B001:Product {title: 'HP 4B001', price: 734.40, shippability: true, availability: true})
+CREATE (lenovo_2B002:Product {title: 'Lenovo 2B002', price: 569.90, shippability: true, availability: true})
+CREATE (apple_5B009:Product {title: 'Apple 5B009', price: 1250.00, shippability: false, availability: true})
+
+MERGE (acer_3B001)-[:IS_IN]->(laptop)
+MERGE (hp_4B001)-[:IS_IN]->(laptop)
+MERGE (lenovo_2B002)-[:IS_IN]->(laptop)
+MERGE (apple_5B009)-[:IS_IN]->(laptop)
+
+//Customer
+CREATE (irwan:Customer {name: 'Irwan Adam', email: 'irwandamdam@example.com', age: 25})
+CREATE (fathia:Customer {name: 'Fathia Annisa', email: 'fathia12@example.com', age: 31})
+CREATE (shalika:Customer {name: 'Shalika Zalfa', email: 'zalfalika@example.com', age: 22})
+CREATE (farhan:Customer {name: 'Farhan Setiawan', email: 'farhans@example.com', age: 24})
+
+MERGE (irwan)-[:VIEWED {views_count: 15}]->(hp_4B001)
+MERGE (irwan)-[:ADDED_TO_WISH_LIST]->(apple_5A027)
+MERGE (irwan)-[:BOUGHT]->(apple_5B009)
+
+MERGE(fathia)-[:VIEWED {views_count: 9}]->(acer_3B001)
+MERGE(fathia)-[:VIEWED {views_count: 15}]->(lenovo_2B002)
+MERGE(fathia)-[:ADDED_TO_WISH_LIST]->(lenovo_2B002)
+
+MERGE(shalika)-[:VIEWED {views_count: 5}]->(asus_1A004)
+MERGE(shalika)-[:ADDED_TO_WISH_LIST]->(lenovo_2A009)
+MERGE(shalika)-[:ADDED_TO_WISH_LIST]->(hp_4A002)
+MERGE(shalika)-[:BOUGHT]->(asus_1A004)
+
+MERGE(farhan)-[:ADDED_TO_WISH_LIST]->(asus_1A004)
+MERGE(farhan)-[:ADDED_TO_WISH_LIST]->(acer_3B001)
+MERGE(farhan)-[:BOUGHT]->(hp_4B001)
+MERGE(farhan)-[:BOUGHT]->(acer_3A006);
+
+
+MATCH (:Customer)-[:ADDED_TO_WISH_LIST|:VIEWED]->(laptop:Product)-[:IS_IN]->(:Category {title: 'Laptop'})
+RETURN laptop;
